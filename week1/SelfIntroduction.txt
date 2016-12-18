@@ -1,0 +1,43 @@
+Where are you from?
+
+Why did you decide to attend OSU?
+- OSU post-bacc online degree lets me take only computer science related courses and give me a degree in computer science.
+It seemed more helpful and student-centered than other institutes. 
+-Even if it was an education done Online, it seemed well organized and I can get lots of helps from the instructors and other teaching assistants.
+-Oregn State University itself seemed like a school which cares students and nature more than the other schools.
+
+
+What are your interests(beyond data structures of course!)?
+-my interest is complex theory. story about barabashi
+-studying on algorithms.
+
+
+What hobbies do you enjoy? 
+-I love reading books shopping books and watching documentary
+
+What is your major?
+- international realations
+
+
+What do you intend to do after graduation?
+-I want to apply for graduate school. I want to do research on algorithm and complexity theory.
+
+What would you like to be doing in five or ten years?
+-In five years, I would like to do my research on computer science at graduate school, 
+in 10 years I would like to get a job as a researcher from a company or school.
+
+
+Do you have an interest in research?
+-As I enrolled in this program to make myself more qualified for graduate school in computer science field.
+I have an interst in research definitely. 
+
+
+If you need more topics you might want to address some computer science issues of the day,
+
+such as why computer science in general had a significant reduction in enrollment from about 2004-2010
+
+
+
+In a sepearate section, previous programming experience has been. what language do you know? how many years of 
+experience you have with each, whiat programming related classes you have taken, and for each language you list
+the platforms you have developed on and the build environment you have used(command lines, MS visual studio?)

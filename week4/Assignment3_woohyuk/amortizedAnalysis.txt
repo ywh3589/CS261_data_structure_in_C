@@ -1,0 +1,53 @@
+
+
+Assignment 2_Part2 
+
+Amortized Analysis of the Dynamic Array
+
+
+1.How many cost units are spent in the entire process of performing 32 consecutive push operations on an empty array which starts out at capacity 8, assuming that the array will double in capacity each time a new item is added to an already full dynamic array? As N(ie. The number of pushs) grows large, under this strategy for resizing, what is the big-oh complexity for a push? 
+
+Num    1  2  3  4  5  6  7  8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32 	
+Cap    8  8  8   8  8  8  8  8  16   16  16  16  16  16  16  16  32  32  32  32  32  32  32  32  32  32  32  32  32  32  32  32
+Cost    1  1  1  1  1  1  1  1   9    1   1   1   1   1   1   1  17   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+ 
+The total cost is 56.
+For total operations, if we double the size when we try to add a new item to a already full array then it will be summed like O(n) with n times of operations Because amortized runtime could be calculated in aggregate method so the total running time of n pushes are 0(n) so big-oh complexity for a puish is O(n)/n which is O(1).
+
+
+2. How many cost units are spent in the entire process of performing 32 consecutive push operations on an empty array which starts out at capacity 8, assuming that the array will grow by a constant 2 spaces each time a new item is added to an already full dynamic arrays? As N(ie the number of pushes) grows large, under this strategy for resizing, what is the big-oh complexity for a push?
+
+Num    1  2  3  4  5  6  7  8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32 	
+Cap    8  8  8   8  8  8  8  8  10  10  12  12  14  14  16  16  18  18  20  20  22  22  24  24  26  26  28  28  30  30  32  32
+Cost    1  1  1  1  1  1  1  1   9   1   11   1  13   1  15   1  17   1  19   1  21   1  23   1  25   1  27   1  29   1  31   1
+
+The total cost is 260.
+For total operations, if we grow the size by a constant 2 spaces when we try to add a new item to a already full array then it will be summed like O(n^2) with n times of operations Because amortized runtime could be calculated in aggregate method so the total running time of n pushes are 0(n^2) so big-oh complexity for a puish is O(n^2)/n which is O(n).
+
+
+3.  Suppose that a dynamic array stack doubles its capacity when it is full, and shrinks(on Pop only) its capacity by half when the array is half full or less. Can you devises a sequence of N push() and pop() operations which will result in poor performance (O(N^2) total cost)? How might you adjust the array¡¯s shrinking policy to avoid this? (Hint. You may assume that the initial capacity of the array is N/2.)
+
+
+	We are to devise the sequence of having a bad performance using push() and pop().
+ Let's assume we are to do N times(N is power of 2) of operations(push or pop). 
+Let's assume we  did N/2 times of push(), then capacity of the array is N/2(as "Hint says"). 
+It means the array is full. Now we can argue about this situation because in the question a dynamic array stack doubles its capacity whhen it is full instead a dynamic array stack doubles 
+when a new item needs to be added to already full array. I tried to take it literally then I encountered some logical error. When the array automatically gets doubled when it hit the capacity of the array
+then the array will have the half of capacity of numbers automatically just right after the expansion. Then it should be shrinked again because a dynamic array stack shrinks its capacity by half when the array is half full or less, which means the array gets shrinked when it gets half full. So the array keeps expanding and shrinking like infinite loop. 
+    So I needed to adjust little bit of the assumption concered with boundary of expansion and shrinkage. I assumed expansion condition to be same with the formere questions and shrinkage condition to be
+like the array gets shrinked when another item needs to erased from the already half-full array. 
+    Now we can devise N/2 numbers of sequences under this circumstance. To devise sequence of operations to result in bad performance, which is O(n^2).
+the sequence should keep copying the elements in one array to another. Copying elements costs O(n) so if the sequence is designed to do operations
+costing O(n) all the time then the total cost will be O(n^2). If we do push one more element then the expansion will happen, which cost O(n) operations.
+And after that we pop() twice,then the array should be shrinked and it costs O(n) to copy the elements from one array to antoehr then we push() twice then the array should be expanded. 
+Keeping push and pop operations like this 
+push pop pop push push pop pop ....
+then the result will be bad as O(n^2). 
+    To avoid this, we can allow the array contain less then half. For example if we change our shrinkage policy to shrink the capacity of the array half when the number of elements gets less than quarter
+not less then half. I could get this from the above two questions. If we lower the load factor less then 1/2 then it will lower the amortized execution time for each operation. So we can make the total cost for the sequence of the operations better in the end.  
+
+
+
+
+
+
